@@ -1,5 +1,4 @@
-# Anusha Radhakrishnan iyer
-# 800872109
+
 # musicrecommender.py
 #
 # Standalone Python/Spark program to perform linear regression.
@@ -12,7 +11,7 @@
 # and the remaining elements constitute the x.
 #
 # Usage: spark-submit musicrecommender.py <inputdatafile>
-# Example usage: spark-submit musicrecommender.py aiyer5_train.csv
+# Example usage: spark-submit musicrecommender.py train.csv test.csv
 #
 #
 
@@ -41,7 +40,7 @@ if __name__ == "__main__":
 
   ######
   #test set
-  test = sc.textFile("practice/aiyer5_test.csv")
+  test = sc.textFile(sys.argv[2])
   #split test by white spaces
   testA= test.map(lambda l:l.split())
   #create array of test
